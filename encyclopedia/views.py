@@ -21,7 +21,8 @@ def entry(request, title):
     conversion = md_converter(title)
     if conversion == None:
         return render(request, "encyclopedia/error.html", {
-            "title": title
+            "title": title,
+            "message": "This entry does not exist (Yet)."
         })
     else:
         return render(request, "encyclopedia/entry.html", {
